@@ -1,0 +1,18 @@
+{
+  "name": "browser-detector",
+  "version": "1.0.0",
+  "description": "A small lib to detect browser and show a notification",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "browser",
+    "detector",
+    "update",
+    "old",
+    "browsers"
+  ],
+  "author": "mindera",
+  "license": "ISC"
+}
