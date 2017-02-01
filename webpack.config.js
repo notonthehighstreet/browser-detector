@@ -1,10 +1,8 @@
 module.exports = {
-    entry: {
-        "detector.min.js": ['./src/index.js']
-    },
+    entry: "./src/index.js",
     output: {
         path: './dist',
-        filename: '[name]'
+        filename: 'detector.min.js'
     },
     module: {
         rules: [

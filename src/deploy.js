@@ -1,4 +1,6 @@
 const s3 = require('s3');
+const fs = require('fs-extra');
+
 const client = s3.createClient({
     s3Options: {
         accessKeyId: process.env.DETECTOR_AWS_ACCESS_KEY,
@@ -6,8 +8,16 @@ const client = s3.createClient({
     }
 });
 
+const targetDir = './dist/' + process.env.npm_package_version;
+
+fs.ensureDir(targetDir, function (err) {});
+
+try {
+    fs.copySync('./dist/detector.min.js', targetDir+'/detector.min.js');
+} catch (err) {}
+
 const params = {
-    localDir: './dist/',
+    localDir: './dist',
     s3Params: {
         ACL:'public-read',
         Bucket: process.env.DETECTOR_AWS_BUCKET,
@@ -23,5 +33,9 @@ uploader.on('progress', function() {
     console.log('progress');
 });
 uploader.on('end', function() {
+    console.log('removing temp files...');
+    fs.removeSync(targetDir, function (err) {
+        if (err) return console.error(err)
+    });
     console.log('done uploading'); // eslint-disable-line no-console
 });
