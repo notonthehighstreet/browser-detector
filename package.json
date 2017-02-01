@@ -1,18 +1,33 @@
 {
   "name": "browser-detector",
   "version": "1.0.0",
-  "description": "A small lib to detect browser and show a notification",
-  "main": "index.js",
+  "description": "A small lib to detect if a browser is outdated and show a notification informing the user",
+  "main": "./scr/index.js",
   "scripts": {
-    "test": "test"
+    "dev": "webpack-dev-server",
+    "build": "webpack --config webpack.config.js",
+    "production": "webpack --config webpack.config.js --optimize-minimize",
+    "test": "test",
+    "deploy": "node ./src/deploy.js"
   },
   "keywords": [
     "browser",
     "detector",
-    "update",
     "old",
     "browsers"
   ],
   "author": "mindera",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.10.0",
+    "node-sass": "^4.4.0",
+    "s3": "^4.4.0",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "styles-toolkit": "^0.5.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0"
+  }
 }
