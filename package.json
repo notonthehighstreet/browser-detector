@@ -1,13 +1,13 @@
 {
   "name": "browser-detector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small lib to detect if a browser is outdated and show a notification informing the user",
   "main": "./scr/index.js",
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack --config webpack.config.js",
     "production": "webpack --config webpack.config.js --optimize-minimize",
-    "test": "test",
+    "test": "mocha ./tests --require ignore-styles",
     "deploy": "npm run production; node ./src/deploy.js"
   },
   "keywords": [
@@ -30,5 +30,10 @@
     "url-loader": "^0.5.7",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
+  },
+  "devDependencies": {
+    "ignore-styles": "^5.0.1",
+    "mocha": "^3.2.0",
+    "mock-browser": "^0.92.12"
   }
 }
