@@ -1,0 +1,103 @@
+{
+  "src_folders": [
+    "tests/regression"
+  ],
+  "test_workers": {
+    "enabled": true,
+    "workers": "auto"
+  },
+  "live_output" : true,
+  "parallel_process_delay" : 10,
+  "disable_colors": false,
+  "selenium": {
+    "start_process": false,
+    "cli_args" : {
+      "webdriver.chrome.driver" : "node_modules/selenium-standalone/.selenium/chromedriver/2.25-x64-chromedriver"
+    }
+  },
+  "custom_commands_path": "./tests/config/commands",
+  "globals_path": "./tests/config/nightwatchGlobals.js",
+  "test_settings": {
+    "default": {
+      "launch_url": "http://localhost:8080",
+      "silent": true,
+      "selenium_port": 80,
+      "screenshots": {
+        "enabled": false,
+        "path": ""
+      },
+      "desiredCapabilities": {
+        "project": "browser-detector",
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "browserstack.local": true,
+        "browserstack.debug": false,
+        "autoDismissAlerts" : true,
+        "locationServicesAuthorized": false,
+        "recordVideo": false,
+        "recordScreenshots": false,
+        "resolution": "1024x768",
+        "screenResolution": "1024x768"
+      }
+    },
+    "local": {
+      "silent": false,
+      "selenium_port": 4444,
+      "selenium_host": "127.0.0.1",
+      "browserstack.local": false,
+      "desiredCapabilities": {
+        "browserName": "phantomjs"
+      },
+      "selenium": {
+        "start_process": true,
+        "server_path": "node_modules/selenium-standalone/.selenium/selenium-server/3.0.1-server.jar"
+      }
+    },
+    "safari_osx": {
+      "desiredCapabilities": {
+        "platform": "OS X 10.11",
+        "browserName": "safari",
+        "version": "9"
+      }
+    },
+    "chrome_win": {
+      "desiredCapabilities": {
+        "platform": "Windows 10",
+        "os": "Windows",
+        "os_version": "10",
+        "browserName": "chrome",
+        "version": "49"
+      }
+    },
+    "firefox_win" : {
+      "desiredCapabilities": {
+        "platform": "Windows 10",
+        "os": "Windows",
+        "os_version": "10",
+        "browserName": "firefox",
+        "version": "49"
+      }
+    },
+    "ie" : {
+      "desiredCapabilities": {
+        "platform": "Windows 7",
+        "os": "Windows",
+        "os_version": "7",
+        "browserName": "internet explorer",
+        "version": "9"
+      }
+    },
+    "edge" : {
+      "desiredCapabilities": {
+        "platform": "Windows 10",
+        "os": "Windows",
+        "os_version": "10",
+        "//bs//browserName": "Edge",
+        "//bs//version": "13",
+        "browserName": "MicrosoftEdge",
+        "version": "13.10586"
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
-# Browser Detector v1.0.0
+# Browser Detector v1.0.1 [![Code Climate](https://codeclimate.com/github/notonthehighstreet/browser-detector/badges/gpa.svg)](https://codeclimate.com/github/notonthehighstreet/browser-detector) [![Test Coverage](https://codeclimate.com/github/notonthehighstreet/browser-detector/badges/coverage.svg)](https://codeclimate.com/github/notonthehighstreet/browser-detector/coverage) [![CircleCI](https://circleci.com/gh/notonthehighstreet/browser-detector/tree/master.svg?style=svg)](https://circleci.com/gh/notonthehighstreet/browser-detector/tree/master)
+
 A simple tool to detect old browsers and notify users that they might experience some problems.
 
 ### How to use
@@ -6,13 +7,13 @@ A simple tool to detect old browsers and notify users that they might experience
 The first step is to include the javascript file with the desired version on the `<head>` tag so that it gets loaded before any other content:
 
 ```html
-<script src="//s3-eu-west-1.amazonaws.com/mindera-bd-test/1.0.0/detector.min.js"></script>
+<script src="//s3-eu-west-1.amazonaws.com/noths-prod-eu-west-1-browser-detector/1.0.1/detector.min.js"></script>
 ```
 
 If you wish to always include the latest version just don't specify it:
 
 ```html
-<script src="//s3-eu-west-1.amazonaws.com/mindera-bd-test/detector.min.js"></script>
+<script src="//s3-eu-west-1.amazonaws.com/noths-prod-eu-west-1-browser-detector/detector.min.js"></script>
 ```
 
 Then you need to initialize, anywhere on the `<body>`, the detector with the browsers and the browser versions you want to compare e.g.:
