@@ -7,8 +7,10 @@
     "dev": "webpack-dev-server",
     "build": "webpack --config webpack.config.js",
     "production": "webpack --config webpack.config.js --optimize-minimize",
-    "test": "mocha ./tests --require ignore-styles",
-    "deploy": "npm run production; node ./src/deploy.js"
+    "test": "mocha --require ./tests/specSetup.js --opts mocha.opts 'tests/**.spec.js'",
+    "deploy": "npm run production; node ./bin/deploy.js",
+    "coverage": "istanbul cover _mocha --require ./tests/specSetup.js -- --opts mocha.opts 'tests/**.spec.js'",
+    "coverage:codeclimate": "npm run coverage && codeclimate-test-reporter < coverage/lcov.info"
   },
   "keywords": [
     "browser",
@@ -32,8 +34,12 @@
     "webpack-dev-server": "^2.2.0"
   },
   "devDependencies": {
+    "codeclimate-test-reporter": "^0.4.1",
     "ignore-styles": "^5.0.1",
+    "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
-    "mock-browser": "^0.92.12"
+    "mocha-junit-reporter": "^1.13.0",
+    "mock-browser": "^0.92.12",
+    "node-hook": "^0.4.0"
   }
 }

@@ -1,0 +1,14 @@
+machine:
+  timezone:
+    Europe/London
+  node:
+    version: v6.7.0
+  java:
+    version: openjdk8
+general:
+  artifacts:
+    - tests/reports
+
+test:
+  post:
+    - if [[ "${CIRCLE_BRANCH}" == "master" ]] ; then npm run coverage:codeclimate; fi
