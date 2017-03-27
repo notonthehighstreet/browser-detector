@@ -7,8 +7,9 @@
     "dev": "webpack-dev-server",
     "build": "webpack --config webpack.config.js",
     "production": "webpack --config webpack.config.js --optimize-minimize",
-    "test": "mocha ./tests --require ignore-styles",
-    "deploy": "npm run production; node ./src/deploy.js"
+    "test": "mocha --require ./tests/specSetup.js --opts mocha.opts 'tests/**.spec.js'",
+    "deploy": "npm run production; node ./bin/deploy.js",
+    "coverage": "istanbul cover _mocha --require ./tests/specSetup.js -- --opts mocha.opts 'tests/**.spec.js'"
   },
   "keywords": [
     "browser",
@@ -33,7 +34,9 @@
   },
   "devDependencies": {
     "ignore-styles": "^5.0.1",
+    "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
+    "mocha-junit-reporter": "^1.13.0",
     "mock-browser": "^0.92.12"
   }
 }

@@ -1,0 +1,8 @@
+instrumentation:
+  include-all-sources: true
+  root: ./src
+  excludes: ['*.scss','*.png','deploy.js']
+reporting:
+  reports:
+    - lcov
+    - html

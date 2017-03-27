@@ -1,15 +1,6 @@
-var assert = require('assert');
-var pattern = require('../src/config').pattern;
-var MockBrowser = require('mock-browser').mocks.MockBrowser;
-var mock = new MockBrowser();
-
-var document = mock.getDocument();
-var window = MockBrowser.createWindow();
-
-global.window = window;
-global.document = document;
-
-var detection = require('../src/index');
+const assert = require('assert');
+const pattern = require('../src/config').pattern;
+const detection = require('../src/index');
 
 describe('detector', function () {
     var notOutdated = {
