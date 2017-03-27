@@ -1,7 +1,7 @@
 instrumentation:
   include-all-sources: true
   root: ./src
-  excludes: ['*.scss','*.png','deploy.js']
+  excludes: ['*.scss','*.png']
 reporting:
   reports:
     - lcov
