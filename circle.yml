@@ -12,3 +12,9 @@ general:
 test:
   post:
     - if [[ "${CIRCLE_BRANCH}" == "master" ]] ; then npm run coverage:codeclimate; fi
+
+deployment:
+  production:
+    branch: master
+    commands:
+    - npm run deploy
