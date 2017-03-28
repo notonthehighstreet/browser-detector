@@ -53,5 +53,8 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+# Outpuf of 'regression'
+tests/tests_output
+tests/regression/screenshots/new
 
 # End of https://www.gitignore.io/api/ndoe,node

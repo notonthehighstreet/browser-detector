@@ -7,10 +7,13 @@
     "dev": "webpack-dev-server",
     "build": "webpack --config webpack.config.js",
     "production": "webpack --config webpack.config.js --optimize-minimize",
-    "test": "mocha --require ./tests/specSetup.js --opts mocha.opts 'tests/**.spec.js'",
+    "test": "mocha --require ./tests/config/specSetup.js --opts mocha.opts 'tests/**.spec.js'",
     "deploy": "npm run production; node ./bin/deploy.js",
-    "coverage": "istanbul cover _mocha --require ./tests/specSetup.js -- --opts mocha.opts 'tests/**.spec.js'",
-    "coverage:codeclimate": "npm run coverage && codeclimate-test-reporter < coverage/lcov.info"
+    "coverage": "istanbul cover _mocha --require ./tests/config/specSetup.js -- --opts mocha.opts 'tests/**.spec.js'",
+    "coverage:codeclimate": "npm run coverage && codeclimate-test-reporter < coverage/lcov.info",
+    "regression:desktop": "npm run regression:core -- --env chrome_win,safari_osx,firefox_win,ie,edge",
+    "regression:core": "ENV=test ./tests/start_regression.js --saucelabs=true -o ./tests/tests_output -c ./tests/config/nightwatch.conf.js --components=. --saveDir=new --compareDir=base",
+    "regression:review": "node ./tests/regression-reviewer.js"
   },
   "keywords": [
     "browser",
@@ -40,6 +43,7 @@
     "mocha": "3.2.0",
     "mocha-junit-reporter": "1.13.0",
     "mock-browser": "0.92.12",
-    "node-hook": "0.4.0"
+    "node-hook": "0.4.0",
+    "noths-liken": "0.5.7"
   }
 }
