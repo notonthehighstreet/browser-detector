@@ -1,4 +1,7 @@
+module.exports.projectDefault = window.location.hostname;
+
 module.exports.bvdefault = {i: 9, f: 40, o: 20, s: 8, n: 12, c: 34, m: 4};
+module.exports.GTM_ID = 'GTM-KTM82DK';
 
 module.exports.names = {
     i: 'Internet Explorer',
